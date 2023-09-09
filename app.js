@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
       .format();
 
     const github_file_url =
-      "https://github.com/Afomachinenye/HNG_TASK_1/main/app.js";
+      "https://github.com/Afomachinenye/HNG-TASK_1/blob/main/app.js";
     const github_repo_url = "https://github.com/Afomachinenye/HNG_TASK_1";
 
     const status_code = 200;
