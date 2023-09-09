@@ -6,7 +6,7 @@ const moment = require("moment-timezone");
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
   try {
     const { slack_name, track } = req.query;
     const current_day = moment().tz("UTC").format("dddd");
