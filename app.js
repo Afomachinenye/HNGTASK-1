@@ -20,8 +20,8 @@ app.get("/api", (req, res) => {
       .format();
 
     const github_file_url =
-      "https://github.com/Afomachinenye/HNG10-TASK-1/blob/main/app.js";
-    const github_repo_url = "https://github.com/Afomachinenye/HNG10-TASK-1";
+      "https://github.com/Afomachinenye/HNGTASK_1/blob/main/app.js";
+    const github_repo_url = "https://github.com/Afomachinenye/HNGTASK_1";
 
     const status_code = 200;
 
