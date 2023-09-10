@@ -11,13 +11,15 @@ app.get("/api", (req, res) => {
     const { slack_name, track } = req.query;
     const current_day = moment().tz("UTC").format("dddd");
 
-    // Get the current UTC time with validation of +/-2 minutes
-    const current_utc_time = moment().tz("UTC");
-    const allowedTimeDifferenceInMinutes = 2;
-    const utc_time = moment()
-      .tz("UTC")
-      .subtract(allowedTimeDifferenceInMinutes, "minutes")
-      .format();
+    const currentDate = new Date();
+    const year = currentDate.getUTCFullYear();
+    const month = (currentDate.getUTCMonth() + 1).toString().padStart(2, "0");
+    const day = currentDate.getUTCDate().toString().padStart(2, "0");
+    const hours = currentDate.getUTCHours().toString().padStart(2, "0");
+    const minutes = currentDate.getUTCMinutes().toString().padStart(2, "0");
+    const seconds = currentDate.getUTCSeconds().toString().padStart(2, "0");
+
+    const currentUTC = `${year}-${month}-${day}T${hours}:${minutes}:${seconds}Z`;
 
     const github_file_url =
       "https://github.com/Afomachinenye/HNGTASK_1/blob/main/app.js";
@@ -28,7 +30,7 @@ app.get("/api", (req, res) => {
     const response_data = {
       slack_name: slack_name,
       current_day: current_day,
-      utc_time: utc_time,
+      utc_time: currentUTC,
       track: track,
       github_file_url: github_file_url,
       github_repo_url: github_repo_url,
