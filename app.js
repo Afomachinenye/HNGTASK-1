@@ -22,8 +22,8 @@ app.get("/api", (req, res) => {
     const currentUTC = `${year}-${month}-${day}T${hours}:${minutes}:${seconds}Z`;
 
     const github_file_url =
-      "https://github.com/Afomachinenye/HNGTASK_1/blob/main/app.js";
-    const github_repo_url = "https://github.com/Afomachinenye/HNGTASK_1";
+      "https://github.com/Afomachinenye/HNGTASK-1/blob/main/app.js";
+    const github_repo_url = "https://github.com/Afomachinenye/HNGTASK-1";
 
     const status_code = 200;
 
